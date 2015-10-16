@@ -1,5 +1,6 @@
 import random
-import urllib.request
+#use urllib if you dont want to download word.txt, however words.txt is faster. More on line 130.
+#import urllib.request
 
 def checkword(word,vector,matrix,wordList):
     # all comparisons in upper case
@@ -56,6 +57,7 @@ def checkword(word,vector,matrix,wordList):
 
     
 def areAllNextTo(points,matrix):
+    '''Are all letter points next to another'''
     for x in range(len(points)-1):
         pointx = points[x]
         pointy = points[x+1]
@@ -66,6 +68,7 @@ def areAllNextTo(points,matrix):
     return True    
     
 def isNextTo(pointx,pointy):
+    '''Is a letter point next to another'''
     if abs(pointx[0]-pointy[0]) <= 1 and abs(pointx[1]-pointy[1]) <= 1:
         return True
     else:
@@ -94,6 +97,7 @@ def permutations(iterable, r):
             return
 
 def getAllPoints(word, matrix):
+    '''Get all points for words'''
     pointList = []
     for row in range(4):
         for col in range(4):
